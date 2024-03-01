@@ -1,0 +1,250 @@
+{
+  "project": {
+    "name": "Bee flying in garden",
+    "id": "new",
+    "creationTs": 1708960458156,
+    "lastModifiedTs": 1709301943922,
+    "userSetData": {
+      "description": "",
+      "tags": [],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "live_camera_vudqfl",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -336,
+          "posY": 64,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "face_landmark_lxhmwd",
+        "nodeSpecId": "face_landmark",
+        "customData": {
+          "previewX": 608,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -128,
+          "posY": 64,
+          "width": 176,
+          "height": 141,
+          "selected": false
+        },
+        "inputValues": {
+          "staticImage": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_vudqfl",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "live_camera_adil07",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 256,
+          "previewY": 256,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -640,
+          "posY": 128,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "virtual_sticker_r7jy1e",
+        "nodeSpecId": "virtual_sticker",
+        "customData": {
+          "previewX": 800,
+          "previewY": 80,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 384,
+          "posY": 128,
+          "width": 176,
+          "height": 255,
+          "selected": false
+        },
+        "propValues": {
+          "anchor": "nose",
+          "scale": 1.557333333333333,
+          "offsetX": 0,
+          "offsetY": 0,
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "landmarkResult": [
+            {
+              "sourceNodeId": "face_landmark_lxhmwd",
+              "outputId": "landmarkResult"
+            }
+          ],
+          "stickerImage": [
+            {
+              "sourceNodeId": "input_image_68ejgr",
+              "outputId": "image"
+            }
+          ],
+          "originalImage": [
+            {
+              "sourceNodeId": "input_image_5hawm8",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "custom-script_zie1bu",
+        "nodeSpecId": "custom-script",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "sandboxed": true,
+          "previewX": 1200,
+          "previewY": 144,
+          "previewWidth": 304,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": 1056,
+          "posY": 256,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "curCode": "\n// Use `strings` to access the input string array.\n// Use `return` to return the result at the end.\n//\n// Note: the code will be executed in an async function,\n// so you can use `await` for async tasks.\n//\n// Example:\n//\n// const a = strings[0];\n// const b = strings[1];\n// const c = await asyncTask();\n// return a + ', ' + b + ', ' + c;\njson_extract(string, '$xMin')",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "strings": []
+        }
+      },
+      {
+        "id": "input_image_68ejgr",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 288,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -347,
+          "posY": 246,
+          "width": 176,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "image=iog024",
+            "image=q7tvyu"
+          ],
+          "gridColumnCount": 4,
+          "allowUserUpload": false,
+          "selectedImageUrl": "image=q7tvyu",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_image_5hawm8",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 272,
+          "previewY": 272,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -64,
+          "posY": 304,
+          "width": 176,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "image=kohq1n",
+            "image=w328u2"
+          ],
+          "gridColumnCount": "4",
+          "allowUserUpload": false,
+          "selectedImageUrl": "image=w328u2",
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "logger-node_y2npwd",
+        "nodeSpecId": "logger-node",
+        "customData": {
+          "previewX": 272,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 656,
+          "posY": 144,
+          "width": 176,
+          "height": 68,
+          "selected": false
+        },
+        "inputValues": {
+          "data": []
+        },
+        "incomingEdges": {
+          "data": [
+            {
+              "sourceNodeId": "face_landmark_lxhmwd",
+              "outputId": "landmarkResult"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customNodeUrls": []
+}
